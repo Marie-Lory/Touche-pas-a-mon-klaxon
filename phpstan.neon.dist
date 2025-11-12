@@ -1,0 +1,34 @@
+parameters:
+    level: 8
+
+    paths:
+        - src
+
+    inferPrivatePropertyTypeFromConstructor: true
+    checkMissingVarTagTypehint: true
+    checkUninitializedProperties: true
+    treatPhpDocTypesAsCertain: true
+    reportUnmatchedIgnoredErrors: false
+
+    # Répertoires à analyser
+    scanDirectories:
+        - src/App/Controllers
+        - src/App/Models
+        - src/App/Views
+
+    ignoreErrors:
+        # Superglobales (usage autorisé dans ce MVC)
+        - '#Access to superglobal \$_(POST|GET|SESSION|SERVER)#'
+        # Fonctions système souvent utilisées dans les contrôleurs
+        - '#Call to function header\(\)#'
+        - '#Call to function exit\(\)#'
+        # Méthodes PDO dynamiques (execute, fetchAll, etc.)
+        - '#Call to an undefined method PDOStatement::(execute|fetch|fetchAll|fetchColumn)#'
+        # Appels à Database::getConnection()
+        - '#Call to static method getConnection\(\) on an unknown class App\\\\Models\\\\Database#'
+        # Erreurs fréquentes dans les vues
+        - '#Binary operation "\." between mixed and#'
+        - '#Parameter\s+\#1\s+\$string of function htmlspecialchars expects string, mixed given#'
+
+includes:
+    - vendor/phpstan/phpstan/conf/bleedingEdge.neon

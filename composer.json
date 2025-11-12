@@ -1,0 +1,33 @@
+{
+  "name": "marielory/mise-en-place-application-mvc-php",
+  "description": "Application MVC PHP de covoiturage interne d\u2019entreprise.",
+  "type": "project",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Marie Lory",
+      "email": "admin@entreprise.com"
+    }
+  ],
+  "require": {
+    "php": ">=8.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "src/App/"
+    }
+  },
+  "require-dev": {
+    "phpstan/phpstan": "2.1.31",
+    "phpunit/phpunit": "9.6"
+  },
+  "scripts": {
+    "analyse": "vendor/bin/phpstan analyse --configuration=phpstan.neon.dist",
+    "test": "vendor/bin/phpunit --configuration=phpunit.xml.dist",
+    "coverage": "vendor/bin/phpunit --coverage-html build/coverage --configuration=phpunit.xml.dist"
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "sort-packages": true
+  }
+}

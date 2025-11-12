@@ -1,0 +1,3 @@
+USERS (id, nom, prenom, email, phone, role, password_hash)
+AGENCIES (id, name, city)
+TRIPS (id, agency_from_id, agency_to_id, departure_datetime, arrival_datetime, seats_total, seats_available, contact_user_id, created_by_user_id)

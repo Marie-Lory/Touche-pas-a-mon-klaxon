@@ -1,0 +1,8 @@
+Sample
+ [x] True is true
+
+Trip
+ [x] Create trip inserts row
+ [x] Update trip modifies data
+ [x] Delete trip removes row
+
